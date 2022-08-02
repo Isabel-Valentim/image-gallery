@@ -41,3 +41,7 @@ button {
   float: left;
   cursor: pointer;
 }
+
+.filter{
+  filter:brightness(50%)
+}

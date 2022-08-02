@@ -6,9 +6,21 @@ const overlay = document.querySelector('.overlay');
 
 // array all images
 const images= ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']
+
 // add images to the thumb bar
-const newImage = document.createElement('img');
-newImage.setAttribute('src', `images/${images[i]}`);
-thumbBar.appendChild(newImage);
+images.forEach(e => {
+    const imagesEle = document.createElement('img')
+    imagesEle.setAttribute('src', `images/${e}`)
+    thumbBar.appendChild(imagesEle)
+});
 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', darkenImage)
+
+function darkenImage(){
+    if (displayedImage.classList.contains('filter')){
+        displayedImage.classList.remove('filter')
+    }else{
+        displayedImage.classList.add('filter')
+    }  
+}
