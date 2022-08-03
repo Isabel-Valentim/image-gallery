@@ -14,6 +14,18 @@ images.forEach(e => {
     thumbBar.appendChild(imagesEle)
 });
 
+//click on images
+images.forEach(e =>{
+    e.addEventListener("click",pickMe)
+})
+
+function pickMe(){
+    if (displayedImage.classList.contains('displayed-img')){
+        displayedImage.classList.remove('displayed-img')
+    }else{
+        displayedImage.classList.add('displayed-img')
+    }  
+}
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', darkenImage)
 
