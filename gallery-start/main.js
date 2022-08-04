@@ -12,20 +12,20 @@ images.forEach(e => {
     const imagesEle = document.createElement('img')
     imagesEle.setAttribute('src', `images/${e}`)
     thumbBar.appendChild(imagesEle)
+    imagesEle.classList.add('imgs')
 });
 
+const allImages = document.querySelectorAll('.imgs')
 //click on images
-images.forEach(e =>{
-    e.addEventListener("click",pickMe)
-})
-
-function pickMe(){
-    if (displayedImage.classList.contains('displayed-img')){
-        displayedImage.classList.remove('displayed-img')
-    }else{
-        displayedImage.classList.add('displayed-img')
-    }  
+console.log(allImages)
+function pickImage(el){
+    if(el)
+    el.target.classList.add('displayed-img')
 }
+
+allImages.addEventListener('click', pickImage)
+
+
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', darkenImage)
 
